@@ -26,7 +26,7 @@ set showmatch
 let python_highlight_all = 1
 
 " other options are solarized, molokai
-colorscheme badwolf
+" colorscheme molokai
 
 " shows line number
 set number
@@ -49,6 +49,8 @@ set lazyredraw
 set incsearch			"search as characters are entered
 set hlsearch			"highlight matches
 
+:inoremap jk <esc>
+:inoremap <esc> <nop>
 
 
 
