@@ -50,7 +50,3 @@ set incsearch			"search as characters are entered
 set hlsearch			"highlight matches
 
 :inoremap jk <esc>
-:inoremap <esc> <nop>
-
-
-

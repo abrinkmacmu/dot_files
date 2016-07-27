@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#courtesy of andrew dornbush github: aurone
+
+# Prompt environment string
+export PS1="\[\e[32;1m\]\u@\h|\[\e[36;1m\]\w> \[\e[0m\]"
+
+# autocomplete from bash history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+

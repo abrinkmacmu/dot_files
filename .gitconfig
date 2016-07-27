@@ -1,6 +1,3 @@
-[user]
-	email = abrinkma@andrew.cmu.edu
-	name = abrinkmacmu
 [core]
 	autocrlf = input
     safecrlf = true
