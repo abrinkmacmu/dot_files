@@ -1,52 +1,67 @@
-" enable syntax highlighting
-syntax enable
+" VIM Configuration File
+" Description: Optimized for C/C++ development, but useful also for other things.
+" Author: Gerhard Gappmeier
+"
 
-" show line numbers
+" set UTF-8 encoding
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
+
+" disable vi compatibility (emulation of old bugs)
+set nocompatible
+
+" use indentation of previous line
+set autoindent
+" use intelligent indentation for C
+set smartindent
+
+" configure tabwidth and insert spaces instead of tabs
+set tabstop=2        " tab width is 4 spaces
+set shiftwidth=2     " indent also with 4 spaces
+set expandtab        " expand tabs to spaces
+
+" wrap lines at 120 chars. 
+set textwidth=120
+
+" turn syntax highlighting on
+set t_Co=256
+syntax on
+
+" colorscheme wombat256
+" turn line numbers on
 set number
 
-" set tabs to have 4 spaces
-set ts=4
-
-" indent when moving to the next line while writing code
-set autoindent
-
-" expand tabs into spaces
-set expandtab
-
-" when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=4
-
-" show a visual line under the cursor's current line 
-set cursorline
-
-" show the matching part of the pair for [] {} and ()
+" highlight matching braces
 set showmatch
 
-" enable all Python syntax highlighting features
-let python_highlight_all = 1
+" intelligent comments
+set comments=sl:/*,mb:\ *,elx:\ */
 
-" other options are solarized, molokai
-" colorscheme molokai
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
 
-" shows line number
-set number
+" in insert mode F2 will exit insert, save, enters insert again
+imap <F2> <ESC>:w<CR>i
 
-" last command displayed in bottom right
-set showcmd
+" switch between header/source with F4
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
-" Highlight current line
-set cursorline		
+" recreate tags file with F5
+map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 
-" load filetype-specific indent files
-filetype indent on
+" create doxygen comment
+map <F6> :Dox<CR>
 
-" visual autocomplete for command menu
-set wildmenu
 
-"redraw only when needed
-set lazyredraw
+" APB Custom Configuration ---------------------------------
 
-set incsearch			"search as characters are entered
-set hlsearch			"highlight matches
+"search as characters are entered
+set incsearch			
+
+"highlight matches
+set hlsearch			
 
 :inoremap jk <esc>
+
+":inoremap <esc> <nop>

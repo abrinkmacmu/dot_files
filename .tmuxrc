@@ -1,0 +1,13 @@
+# Mouse mode
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+set mouse-utf8 off
+
+# Active pane border colour
+set-option -g pane-active-border-fg red
+
+# Rate limiting
+set -g c0-change-trigger 150
+set -g c0-change-interval 100
