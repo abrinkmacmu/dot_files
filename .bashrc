@@ -113,16 +113,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#export CAFFE_ROOT=/home/harp/Segnet-Tutorial/caffe-segnet
-#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-
-#source /opt/ros/indigo/setup.bash
-#source ~/harp_ws/devel/setup.bash
-
-#export ROS_IP=127.0.0.1
-#export ROS_HOSTNAME=harp-master
-#export ROSLAUNCH_SSH_UNKNOWN=1
-
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -131,5 +121,10 @@ alias gd='git diff'
 alias go='git checkout'
 alias gh='git hist'
 
-source ~/.bashrc.aurone
+# prompt environement string
+export PS1="\[\e[32;1m\]\u@\h|\[\e[36;1m\]\w> \[\e[0m\]"
+
+# autocomplete from bash history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
